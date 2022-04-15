@@ -182,9 +182,39 @@ Use the getReviewsByRating function below to do the following:
   ]
 */
 
- function getReviewByRating(/* code here */) {
-    /* code here */
+
+
+ function getReviewByRating(arr, val) {
+    const ratingRange = [];
+    for(let i = 0; i < arr.length; i++){
+      if(val < 1){
+        if(arr[i].rating < 1){
+          ratingRange.push(arr[i]);
+        }
+      } if(val >= 1 && val < 2){
+        if(arr[i].rating >= 1 && arr[i].rating < 2){
+          ratingRange.push(arr[i]);
+        }
+      } if(val >= 2 && val < 3){
+        if(arr[i].rating >= 2 && arr[i].rating < 3){
+          ratingRange.push(arr[i]);
+        }
+      } if(val >= 3 && val < 4){
+        if(arr[i].rating >= 3 && arr[i].rating < 4){
+          ratingRange.push(arr[i]);
+        }
+      } if(val >= 4 && val < 5){
+        if(arr[i].rating >= 4 && arr[i].rating < 5){
+          ratingRange.push(arr[i]);
+        }
+      } if(val == 5){
+        if(arr[i].rating === 5){
+          ratingRange.push(arr[i]);
+        } 
+      }
+    }return ratingRange
   }
+
 
   
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪💪   
@@ -200,10 +230,22 @@ Use the getLongReviews function below to do the following:
   ]
 */
 
-function getLongReviews(/* code here */) {
-    /* code here */
+console.log("Stretch 2 Start")
+
+function getLongReviews(arr) {
+    const longReviews = []
+    for(let i = 0; i < arr.length; i++){
+      let feedback = arr[i].feedback;
+      let count = feedback.split(" ");
+      if(count.length > 15){
+        longReviews.push(arr[i])
+      }
+    } return longReviews
   }
-  
+
+  console.log(getLongReviews(reviews))
+
+
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 3: 💪💪💪💪💪💪💪💪💪💪 
 This stretch goal does not use the reviews data!  You create your own object in this stretch goal.
